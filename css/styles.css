@@ -1,0 +1,208 @@
+/* Color Palette
+# - F4F7FA - platinum: background for the page
+# - FFFFFF - white: content background and text on navy
+# - A6CFD5 - light blue: education background and footer links
+# - 26408B - french blue: headings and links
+# - 0F084B - deep twilight: text, header, and footer
+
+from: https://coolors.co/f4f7fa-ffffff-a6cfd5-26408b-0f084b
+*/
+
+/* Global styles 
+------------------------------------*/
+
+/* Border box fix */
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  background-color: #f4f7fa;
+  color: #0f084b;
+  font-family: Outfit, sans-serif;
+  font-weight: 400;
+  line-height: 1.75;
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  font-family: "Rock Salt", cursive;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 36px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+header > :last-child,
+footer > :last-child,
+section > :last-child {
+  margin-bottom: 0;
+}
+
+a {
+  color: #26408b;
+}
+
+a:hover {
+  color: #0f084b;
+}
+
+main h2,
+main h3 {
+  color: #26408b;
+  margin-bottom: 0;
+}
+
+.content-wrap {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.column-narrow {
+  width: 30%;
+  float: left;
+  padding-right: 3%;
+  min-height: 175px;
+}
+
+.column-wide {
+  width: 70%;
+  float: left;
+  min-height: 225px;
+}
+
+/* Header & Footer 
+------------------------------------*/
+header {
+  text-align: center;
+  background-color: #0f084b;
+  color: #ffffff;
+}
+
+header h1,
+header h2 {
+  margin: 0;
+}
+
+header h2 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 500;
+}
+
+footer {
+  text-align: center;
+  background-color: #0f084b;
+  color: #ffffff;
+}
+
+footer a {
+  color: #a6cfd5;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+.contact-info a {
+  padding: 10px;
+  display: inline-block;
+}
+
+.profile-img {
+  border-radius: 50%;
+}
+
+/* Tools
+------------------------------------*/
+.tools-strip {
+  padding: 24px;
+  background-color: #f4f7fa;
+  overflow: hidden;
+}
+
+.logo-track {
+  display: flex;
+  width: max-content;
+  /* 40 seconds, moving at a constant speed, forever */
+  animation: scroll-logos 40s linear infinite;
+}
+
+.logo-group {
+  display: flex;
+  gap: 24px;
+  padding-right: 24px;
+}
+
+.logo-group img {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+/* defines an animation named scroll-logos
+move one full group, then repeat from the matching copy
+*/
+@keyframes scroll-logos {
+  /* animation's ending position */
+  to {
+    /* shifts the track left by half its own width */
+    transform: translateX(-50%);
+  }
+}
+
+/* pause when the mouse is over it, or when its tabbed into focus */
+.tools-strip:hover .logo-track,
+.tools-strip:focus .logo-track {
+  animation-play-state: paused;
+}
+
+/* for when someone has enabled reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .tools-strip {
+    overflow-x: auto;
+  }
+
+  .logo-track {
+    animation: none;
+  }
+
+  /* hide the duplicate row when the animation is off */
+  .logo-group[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+/* Work Experience
+------------------------------------*/
+
+section.work-experience {
+  background-color: #ffffff;
+  color: #0f084b;
+}
+section.work-experience p {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/* Education
+------------------------------------*/
+section.education {
+  background-color: #a6cfd5;
+  color: #0f084b;
+}
